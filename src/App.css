@@ -1,0 +1,26 @@
+.headerTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 25rem;
+}
+
+label {
+    vertical-align: middle;
+    margin-bottom: 4px;
+    display: inline;
+}
+
+#myRange {
+    margin-bottom: -9px;
+}
+
+.price {
+    padding-left: 10rem;
+}

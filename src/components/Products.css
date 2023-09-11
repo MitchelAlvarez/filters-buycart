@@ -1,0 +1,16 @@
+.products {
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+}
