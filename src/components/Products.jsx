@@ -41,7 +41,7 @@ export function Products() {
         return (
             <>
                 <button className="removeCartBtn" onClick={() => clearCart()}><RemoveFromCartIcon /></button>
-                <div>
+                <div className="addRemoveProduct">
                     <button onClick={removeOneProduct}>-</button><p>{quantity}</p><button onClick={addToCart}>+</button>
                 </div>
 

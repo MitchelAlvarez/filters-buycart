@@ -50,6 +50,10 @@
     scale: 1.1;
 }
 
+.check {
+    display: none;
+}
+
 .cart-button~input:checked~.cart {
     height: 100%;
     display: block;

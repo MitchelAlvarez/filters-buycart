@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import { CartIcon, ClearCartIcon, RemoveFromCartIcon } from "./icon.jsx";
 import React from "react";
 import "./Cart.css"
@@ -24,14 +24,19 @@ function CartItem({ thumbnail, price, title, quantity, addToCart, removeOneProdu
 
 export function Cart() {
     const cartCheckboxId = useId()
+    const [checkboxVal, setCheckboxVal] = useState(false)
     const { cart, addToCart, clearCart, removeOneProduct } = useCart()
 
     return (
         <>
-            <label className="cart-button" htmlFor={cartCheckboxId}>
+            <label className="cart-button" htmlFor={cartCheckboxId} onClick={() => {
+                console.log(checkboxVal)
+                document.getElementById("{cartCheckboxId}").checked = !checkboxVal
+                setCheckboxVal(!checkboxVal)
+            }}>
                 <CartIcon />
             </label>
-            <input id="{cartCheckboxId}" type="checkbox" hidden />
+            <input id="{cartCheckboxId}" type="checkbox" className="check" hidden />
 
             <aside className="cart">
                 <ul>
