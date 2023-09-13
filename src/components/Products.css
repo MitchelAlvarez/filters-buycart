@@ -14,3 +14,11 @@
     width: 100px;
     height: 100px;
 }
+
+.addCartBtn {
+    background-color: rgb(97, 166, 239);
+}
+
+.removeCartBtn {
+    background-color: red
+}

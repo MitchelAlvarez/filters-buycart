@@ -5,6 +5,8 @@ import { Products } from "./components/Products";
 import { useCaregory } from './hooks/useCartegoryList'
 import { useMaxRange } from "./hooks/useMaxRange";
 import { useFilters } from "./hooks/useFilter";
+import { CartProvider } from "./context/cart.jsx";
+import { Cart } from "./components/Cart";
 
 
 
@@ -17,7 +19,6 @@ function App() {
         const categorySelected = document.getElementById('category').value
         myRange({ categorySelected })//it bring me the max price for category selected
         const object2 = Object.assign({}, filters, { category: categorySelected })
-        console.log(object2)
         setFilters(object2)
         document.getElementById("myRange").value = 0
     }
@@ -27,11 +28,8 @@ function App() {
         const object2 = Object.assign({}, filters, { price: priceSelected })
         setFilters(object2)
     }
-
-    console.log(filters.category)
-
     return (
-        <>
+        <CartProvider>
             <header>
                 <section className="headerTitle">
                     <h1>Shopping Cart</h1><CartIcon />
@@ -57,8 +55,9 @@ function App() {
                     </form>
                 }
             </header>
+            <Cart />
             <Products filters={filters} />
-        </>
+        </CartProvider>
     )
 }
 

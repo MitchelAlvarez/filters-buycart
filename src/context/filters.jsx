@@ -1,10 +1,7 @@
 import { createContext, useState } from "react";
 import React from "react";
 
-export const FilterContext = createContext({
-    category: 'all',
-    price: 0
-})
+export const FilterContext = createContext()
 
 export function FilterProvider({ children }) {
     const [filters, setFilters] = useState({
